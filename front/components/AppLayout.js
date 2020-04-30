@@ -9,7 +9,7 @@ const dummy = {
   Post : [],
   Following: [],
   Followers: [],
-  isLoggedIn: false,
+  isLoggedIn: true,
 }
 
 const AppLayout = ({ children }) => {
@@ -23,7 +23,7 @@ const AppLayout = ({ children }) => {
         </Menu.Item>
       </Menu>
       <Link href="/signup"><a><Button>회원가입</Button></a></Link>
-      <Row>
+      <Row gutter={8}>
         <Col xs={24} md={6}>
           {dummy.isLoggedIn?
             <Card
@@ -40,14 +40,15 @@ const AppLayout = ({ children }) => {
             </Card>
           :
             <LoginForm/>}
-            <Link href="/signup"><a><Button>회원가입</Button></a></Link>
+            {/* <Link href="/signup"><a><Button>회원가입</Button></a></Link> */}
         </Col>
-        <Col xs={24} md={12}>두번째
+        <Col xs={24} md={12}>
+          {children}
         </Col>
-        <Col xs={24} md={6}>세번째
+        <Col xs={24} md={6}>
+            aaa
         </Col>
       </Row>
-      {children}
     </div>
   );
 };
