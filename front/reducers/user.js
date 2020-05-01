@@ -4,6 +4,7 @@ const dummyUser = {
   Following: [],
   Followers: [],
   isLoggedIn: false,
+  signupData : [],
 }
 
 export const initialState = {
@@ -11,9 +12,16 @@ export const initialState = {
   user : null,
 };
 
+export const SIGN_UP = 'SIGN_UP';
 export const LOG_IN = 'LOG_IN'; //액션의 이름
 export const LOG_OUT = 'LOG_OUT';
 
+export const signUpAction = (data) =>{
+  return {
+    type: SIGN_UP,
+    data : data,
+  };
+};
 
 export const loginAction = {
   type : LOG_IN,
@@ -42,6 +50,13 @@ const reducer = (state = initialState, action) => {
         user: null,
       }
     }
+    case SIGN_UP : {
+      return {
+        ...state,
+        signupData: action.data,
+      };
+    }
+
     default : {
       return {
         ...state,
