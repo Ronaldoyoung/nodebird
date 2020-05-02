@@ -1,14 +1,17 @@
-import { all, fork, takeLatest, call, put } from 'redux-saga/effects';
-import { LOG_IN, LOG_IN_SUCCESS, LOG_IN_FAILURE, SIGN_UP_REQUEST } from '../reducers/user';
+import { all, fork, takeEvery, call, put, delay } from 'redux-saga/effects';
+import axios from 'axios';
+import { LOG_IN_REQUEST, LOG_IN_SUCCESS, LOG_IN_FAILURE, SIGN_UP_REQUEST , SIGN_UP_FAILURE, SIGN_UP_SUCCESS } from '../reducers/user';
 
 
 function loginAPI() {
   //서버에 요청을 보내는 부분
+  return axios.post('/login');
 }
 
 function* login() {
   try{
-    yield call(loginAPI);
+    // yield call(loginAPI);
+    yield delay(2000);
     yield put({
       type:LOG_IN_SUCCESS
     })
@@ -21,12 +24,11 @@ function* login() {
 }
 
 function* watchLogin() {
-  yield takeLatest(LOG_IN_REQUEST , login);
+  yield takeEvery(LOG_IN_REQUEST , login);
 }
 
 function signUpAPI() {
   //서버에 요청을 보내는 부분
-  return axios.post('/login');
 }
 
 function* signUp() {
