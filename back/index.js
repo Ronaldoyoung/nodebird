@@ -7,7 +7,7 @@ app.get('/', (req , res) => {
 });
 
 app.get('/about', (req, res) => {
-  res.send('hello , about');
+  res.send('hello , about!!!');
 })
 
 app.listen(3065, () => {
