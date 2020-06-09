@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Form , Input} from 'antd';
 
 const NicknameEditForm = () => {
+  console.log('오늘도 회사 코딩@@');
   return (
     <Form style={{ marginBottom: '20px', border : '1px solid #d9d9d9' , padding: '20px'}}>
       <Input addonBefore="닉네임" />

@@ -1,9 +1,11 @@
 const express = require('express');
-
+const db = require('./models');
 const app = express();
 
+db.sequelize.sync();
+
 app.get('/', (req , res) => {
-  res.send('Hello, server');
+  res.send('Hello, server~~');
 });
 
 app.get('/about', (req, res) => {
