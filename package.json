@@ -1,0 +1,8 @@
+{
+  "name": "nodebird",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Ronaldoyoung/nodebird.git",
+  "author": "jimmy <ronaldoyoung@gmail.com>",
+  "license": "MIT"
+}
